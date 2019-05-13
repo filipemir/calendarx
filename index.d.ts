@@ -1,7 +1,10 @@
 import * as React from "react";
-import * as moment from "moment";
+import moment from "moment";
 
-export = CalendarX; 
+// export = CalendarX; 
+export declare class Waypoint extends React.FunctionComponent<CalendarxProps> {
+    useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
+};
 
 declare namespace CalendarX {
 
@@ -13,18 +16,18 @@ declare namespace CalendarX {
         date: DateLike;
     }
 
-    export interface CalendarxEvent extends BaseEvent {
+    interface CalendarxEvent extends BaseEvent {
         [key: string]: any;
     }
 
-    export interface CalendarxDay {
+    interface CalendarxDay {
         date: Date;
         events: CalendarxEvent[];
         isToday: boolean;
         isSame: (unit: DateUnit) => boolean;
     }
 
-    export interface CalendarxChildrenProps {
+    interface CalendarxChildrenProps {
         days: CalendarxDay[][];
         date: Date;
         view: DateUnit;
@@ -36,7 +39,7 @@ declare namespace CalendarX {
         headers: { title: string; day: number }[];
     }
 
-    export interface CalendarxProps {
+    interface CalendarxProps {
         children?: React.SFC<CalendarxChildrenProps>;
         date?: DateLike;
         initialDate?: DateLike;
@@ -53,5 +56,5 @@ declare namespace CalendarX {
     };
 
     // export default Calendar;
-    // export function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
+    function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
 }
