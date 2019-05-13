@@ -1,13 +1,11 @@
 import * as React from "react";
 import moment from "moment";
 
+declare function CalendarX(props: CalendarX.Props): React.FunctionComponent<CalendarX.Props>
+
 export = CalendarX; 
 
-declare function CalendarX(props: CalendarX.Props): React.FunctionComponent<CalendarX.Props> & {
-    useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
-}
-
-// export function useCalendar(props: CalendarX.Props): CalendarX.ChildrenProps;
+export function useCalendar(props: CalendarX.Props): CalendarX.ChildrenProps;
 
 declare namespace CalendarX {
     type DateLike = Date | string | number | moment.Moment;
@@ -53,5 +51,5 @@ declare namespace CalendarX {
         render?: any;
     }
 
-    export function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
+    // exportfunction useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
 }
