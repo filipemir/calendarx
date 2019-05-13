@@ -6,9 +6,10 @@
   "umd:main": "dist/calendarx.umd.js",
   "module": "dist/calendarx.mjs",
   "source": "src/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "microbundle --name Calendarx --jsx React.createElement --target web",
+    "build": "microbundle --name Calendarx --jsx React.createElement --target web && cp src/index.d.ts dist",
     "watch": "yarn build watch",
     "lint": "eslint src test",
     "format": "prettier {src,test}/*.js --single-quote --no-semi --print-width=100 --write",
