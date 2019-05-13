@@ -3,7 +3,9 @@ import moment from "moment";
 
 export = CalendarX; 
 
-declare function CalendarX(props: CalendarX.Props): React.FunctionComponent<CalendarX.Props>
+declare function CalendarX(props: CalendarX.Props): React.FunctionComponent<CalendarX.Props> & {
+    useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
+}
 
 // export function useCalendar(props: CalendarX.Props): CalendarX.ChildrenProps;
 
