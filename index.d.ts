@@ -3,12 +3,11 @@ import moment from "moment";
 
 export = CalendarX; 
 
-declare function CalendarX(props: CalendarX.CalendarxProps): React.FunctionComponent<CalendarX.CalendarxProps> & {
-    useCalendar: (props: CalendarX.CalendarxProps) => CalendarX.CalendarxChildrenProps;
+declare function CalendarX(props: CalendarX.Props): React.FunctionComponent<CalendarX.Props> & {
+    useCalendar: (props: CalendarX.Props) => CalendarX.ChildrenProps;
 }
 
 declare namespace CalendarX {
-
     type DateLike = Date | string | number | moment.Moment;
     type DateUnit = "year" | "month" | "week" | "day";
     type WeekdayNum = 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -17,19 +16,19 @@ declare namespace CalendarX {
         date: DateLike;
     }
 
-    interface CalendarxEvent extends BaseEvent {
+    interface Event extends BaseEvent {
         [key: string]: any;
     }
 
-    interface CalendarxDay {
+    interface Day {
         date: Date;
-        events: CalendarxEvent[];
+        events: Event[];
         isToday: boolean;
         isSame: (unit: DateUnit) => boolean;
     }
 
-    interface CalendarxChildrenProps {
-        days: CalendarxDay[][];
+    interface ChildrenProps {
+        days: Day[][];
         date: Date;
         view: DateUnit;
         jump: (n: number, units: DateUnit) => void;
@@ -40,22 +39,15 @@ declare namespace CalendarX {
         headers: { title: string; day: number }[];
     }
 
-    interface CalendarxProps {
-        children?: React.SFC<CalendarxChildrenProps>;
+    interface Props {
+        children?: React.SFC<ChildrenProps>;
         date?: DateLike;
         initialDate?: DateLike;
         initialNumDays?: number;
         numDays?: number;
-        events?: CalendarxEvent[];
+        events?: Event[];
         weekStartsOn?: WeekdayNum;
         headers?: string[];
         render?: any;
     }
-
-    const Calendar: React.FunctionComponent<CalendarxProps> & {
-        useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
-    };
-
-    // export default Calendar;
-    function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
 }
