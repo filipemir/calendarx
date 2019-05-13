@@ -1,5 +1,5 @@
-import React from "react";
-import moment from "moment";
+import * as React from "react";
+import * as moment from "moment";
 
 export = CalendarX; 
 
@@ -52,6 +52,6 @@ declare namespace CalendarX {
         useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
     };
 
-    export default Calendar;
-    export function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
+    // export default Calendar;
+    // export function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
 }
