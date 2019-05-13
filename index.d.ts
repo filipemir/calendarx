@@ -2,9 +2,7 @@ import * as React from "react";
 import moment from "moment";
 
 // export = CalendarX; 
-export declare class Calendarx extends React.Component<CalendarxProps, {}> {
-    useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
-}
+
 
 declare namespace CalendarX {
 
@@ -57,4 +55,8 @@ declare namespace CalendarX {
 
     // export default Calendar;
     function useCalendar(props?: CalendarxProps): CalendarxChildrenProps;
+
+    export declare class Calendarx extends React.Component<CalendarxProps, {}> {
+        useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
+    }
 }
