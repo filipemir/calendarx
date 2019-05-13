@@ -2,9 +2,9 @@ import * as React from "react";
 import moment from "moment";
 
 // export = CalendarX; 
-export declare class Waypoint implements React.FunctionComponent<CalendarxProps> {
+export declare class Calendarx extends React.Component<CalendarxProps, {}> {
     useCalendar: (props: CalendarxProps) => CalendarxChildrenProps;
-};
+}
 
 declare namespace CalendarX {
 
