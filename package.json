@@ -6,7 +6,7 @@
   "umd:main": "dist/calendarx.umd.js",
   "module": "dist/calendarx.mjs",
   "source": "src/index.js",
-  "types": "dist/index.d.ts",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "microbundle --name Calendarx --jsx React.createElement --target web && cp src/index.d.ts dist",
